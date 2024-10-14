@@ -56,16 +56,16 @@ CREATE PROCEDURE RegistrarVenta(
 BEGIN
     DECLARE p_PrecioTotal DECIMAL;
     
-    -- Calcular el precio total basado en la cantidad y el precio del producto
+    
     SELECT (p_Cantidad * Precio) INTO p_PrecioTotal
     FROM Producto
     WHERE ID = p_IDProducto;
     
-    -- Insertar la venta
+    
     INSERT INTO Venta(Cantidad, FechaVenta, FechaEntrega, PrecioTotal, IDCliente, IDEmpleado, IDProducto)
     VALUES (p_Cantidad, p_FechaVenta, p_FechaEntrega, p_PrecioTotal, p_IDCliente, p_IDEmpleado, p_IDProducto);
     
-    -- Actualizar el stock del producto
+    
     UPDATE Producto
     SET Stock = Stock - p_Cantidad
     WHERE ID = p_IDProducto;
