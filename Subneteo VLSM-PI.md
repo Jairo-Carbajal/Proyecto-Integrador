@@ -66,14 +66,14 @@
 
 ---
 
-### **7\. Subred para 63 hosts (requiere 2^6 \= 64 hosts)**
+### **7\. Subred para 63 hosts (requiere 2^7 \= 128 hosts)**
 
-* **Máscara**: /26  
-* **Red**: 192.168.3.0  
+* **Máscara**: /25  
+* **Red**: 192.168.3.128  
 * **Primera IP**: 192.168.3.1  
-* **Última IP**: 192.168.3.62  
-* **Broadcast**: 192.168.3.63  
-* **Hosts útiles**: 62
+* **Última IP**: 192.168.3.126  
+* **Broadcast**: 192.168.3.127  
+* **Hosts útiles**: 126
 
 ---
 
@@ -178,12 +178,12 @@
 
 ### **17\. Subred para 31 hosts (requiere 2^5 \= 32 hosts)**
 
-* **Máscara**: /27  
-* **Red**: 192.168.5.128  
-* **Primera IP**: 192.168.5.129  
-* **Última IP**: 192.168.5.158  
-* **Broadcast**: 192.168.5.159  
-* **Hosts útiles**: 30
+Máscara: /26
+Red: 192.168.5.128
+Primera IP: 192.168.5.129
+Última IP: 192.168.5.158
+Broadcast: 192.168.5.159
+Hosts útiles: 62
 
 ---
 
