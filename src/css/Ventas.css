@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.text{
+    display: flex;
+    justify-items: start;
+    font-family: "Bungee Tint", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.3rem;
+    margin-top: 1rem;
+}
+
+.text2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    margin-top: 1rem;
+    padding-left: 13%;
+
+}
+
+.todo{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    background-color: #d39800;
+}
+
+.venput{
+    padding: 1.3rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #e0e0e0, #a9a9a9); 
+    color: #333; 
+    text-align: center;
+    transition: transform 0.2s ease;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+input:focus {
+    outline: none; 
+    background: linear-gradient(90deg, #cfcfcf, #808080); 
+    transform: scale(1.05); 
+}
+
+label {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+select{
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background: #e0e0e0;
+    color: #333;
+    margin-right: 7rem;
+    
+}
+
+select:hover{
+    background: linear-gradient(90deg, #d3d3d3, #808080); 
+}
+
+
+select::-ms-expand {
+    display: none;
+}
+
+.botonesventas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 6%;
+    padding: 2rem 3rem;
+}
+
+.volver{
+    background-color: #dd5b5b;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.volver:hover{
+    background-color: #c34040;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.confirmar{
+    background-color: #59dd5b;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.confirmar:hover{
+    background-color: #3f9e3f;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.juntos{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 1rem;
+}
