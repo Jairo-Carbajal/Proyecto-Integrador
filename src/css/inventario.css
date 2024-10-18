@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.inventario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Itim", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+}
+
+.tabla-productos {
+  width: 60%;
+  margin: auto;
+  border-collapse: collapse;
+  background-color: #444;
+  color: white;
+  font-size: 18px;
+  margin-top: 2rem;
+  background: linear-gradient(45deg, #383838, #9e9e9e);
+}
+.tabla-productos th,
+.tabla-productos td {
+  border: 1px solid #fff;
+  padding: 15px;
+  text-align: center;
+}
+.tabla-productos th {
+  background-color: #333;
+}
+.tabla-productos td img {
+  width: 50px;
+  height: auto;
+}
+.boton-comprar {
+  background-color: #28a745;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.boton-comprar:hover {
+  background-color: #218838;
+}
+.cont3{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.maini{
+    background: linear-gradient(90deg, #383838, #c9c8c8);
+}
+
+.texto3{
+    color: white;
+}

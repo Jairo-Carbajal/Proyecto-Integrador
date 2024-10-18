@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.mainhv{
+    background: linear-gradient(90deg, #383838, #c9c8c8);
+}
+
+.tHV {
+    width: 80%;
+    border-collapse: collapse;
+    background-color: #444; 
+    color: white; 
+    border-radius: 15px;
+    overflow: hidden;
+}
+.thhv, .tdhv {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+.thhv {
+    background-color: #333;
+    font-weight: bold;
+}
+.tdhv {
+    background-color: #555; 
+}
+.trhv:hover {
+    background-color: #666; 
+}

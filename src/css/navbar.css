@@ -36,6 +36,7 @@
   border-radius: 15px;
   padding: 1.1rem;
   margin-left: 3rem;
+  text-decoration: none;
 }
   
 .boton-nav:hover {
@@ -71,6 +72,7 @@
   border-radius: 25px;
   margin-left: 3rem;
   border: 1px  black solid;
+  text-decoration: none;
 }
 
 .botones2{

@@ -95,6 +95,7 @@ select::-ms-expand {
     padding: 10px 20px;
     cursor: pointer;
     transition: 0.3s ease;
+    text-decoration: none;
 }
 
 .volver:hover{
@@ -112,6 +113,7 @@ select::-ms-expand {
     padding: 10px 20px;
     cursor: pointer;
     transition: 0.3s ease;
+    text-decoration: none;
 }
 
 .confirmar:hover{
@@ -127,4 +129,12 @@ select::-ms-expand {
     align-items: center;
     margin-top: 1rem;
     padding: 1rem;
+}
+
+.mainv{
+    background: linear-gradient(90deg, #383838, #c9c8c8);
+}
+
+.juntos label{
+    color: white;
 }
