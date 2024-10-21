@@ -72,17 +72,6 @@ INSERT INTO Venta (ID, Cantidad, FechaVenta, FechaEntrega, PrecioTotal, IDClient
 (3, 3, '2024-10-07', '2024-10-14', 105.00, 3, 3, 3);
 
 DELIMITER //
-CREATE TRIGGER RestaurarStock
-AFTER DELETE ON Venta
-FOR EACH ROW
-BEGIN
-    UPDATE Producto
-    SET Stock = Stock + OLD.Cantidad
-    WHERE ID = OLD.IDProducto;
-END //
-DELIMITER ;
-
-DELIMITER //
 CREATE TRIGGER ValidarTelefono
 BEFORE INSERT ON Cliente
 FOR EACH ROW
