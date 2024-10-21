@@ -145,18 +145,6 @@ END //
 DELIMITER ;
 
 DELIMITER //
-CREATE TRIGGER ValidarFechasVenta
-BEFORE INSERT ON Venta
-FOR EACH ROW
-BEGIN
-    IF NEW.FechaEntrega < NEW.FechaVenta THEN
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'La fecha de entrega no puede ser anterior a la fecha de venta.';
-    END IF;
-END //
-DELIMITER ;
-
-DELIMITER //
 
 CREATE PROCEDURE RegistrarVenta(
     IN p_Cantidad DECIMAL,
