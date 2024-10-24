@@ -1,75 +1,79 @@
-drop database if exists PI;
-create database PI;
-use PI;
+drop database if exists Gandara;
+create database Gandara;
+use Gandara;
 
-create table Producto(
-ID int primary key,
-NombreProducto varchar(50),
-Stock int,
-Precio decimal
+CREATE TABLE Producto (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    Nombre enum('Leche','yogurt','Queso'),
+    Stock INT DEFAULT 0,
+    Precio DECIMAL(10, 2) NOT NULL
 );
 
-create table Cliente(
-ID int primary key,
-Nombre varchar(50),
-Telefono int
+CREATE TABLE Cliente (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    Nombre VARCHAR(255) NOT NULL,
+    telefono VARCHAR(20)
 );
 
-create table Empleado(
-ID int primary key,
-Nombre varchar(50),
-Puesto varchar(50),
-Sueldo decimal,
-Contrasenia varchar(50)
+CREATE TABLE Empleado (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    Nombre VARCHAR(255) NOT NULL,
+    Puesto VARCHAR(100),
+    Sueldo DECIMAL(10, 2),
+    Contraseña VARCHAR(255) NOT NULL
 );
 
-Create table Asistencia(
-EstadoDeAsistencia varchar(50),
-Fecha date,
-IDEmpleado int,
-foreign key(IDEmpleado) references Empleado(ID)	
+CREATE TABLE Asistencia (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    EmpleadoID INT,
+    Fecha DATE NOT NULL,
+    EstadoDeAsistencia ENUM('Presente', 'Ausente', 'Tarde') NOT NULL,
+    FOREIGN KEY (EmpleadoID) REFERENCES Empleado(ID)
 );
 
-create table Venta(
-ID int primary key,
-Cantidad decimal,
-FechaVenta date,
-FechaEntrega date,
-PrecioTotal decimal,
-IDCliente INT,
-IDEmpleado INT,
-IDProducto INT,
-foreign key(IDCliente) references Cliente(ID),
-foreign key(IDEmpleado) references Empleado(ID),
-foreign key(IDProducto) references Producto(ID)
+CREATE TABLE Venta (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    FechaVenta DATE NOT NULL,
+    EmpleadoID INT,
+    ClienteID INT,
+    ProductoID INT,
+    Cantidad INT NOT NULL,
+    PrecioTotal DECIMAL(10, 2),
+    FechaEntrega DATE,
+    FOREIGN KEY (EmpleadoID) REFERENCES Empleado(ID),
+    FOREIGN KEY (ClienteID) REFERENCES Cliente(ID),
+    FOREIGN KEY (ProductoID) REFERENCES Producto(ID)
 );
 
-INSERT INTO Cliente (ID, Nombre, Telefono) VALUES
-(1, 'Ana Torres', 123456789),
-(2, 'Luis Martínez', 987654321),
-(3, 'Pedro Sánchez', 456789123);
+-- Inserciones para la tabla Cliente
+INSERT INTO Cliente (Nombre, telefono) VALUES
+('María González', '555-1234'),
+('Juan Pérez', '555-5678'),
+('Ana Rodríguez', '555-9012');
 
+-- Inserciones para la tabla Producto
+INSERT INTO Producto (Nombre, Stock, Precio) VALUES
+('Leche', 100, 2.50),
+('yogurt', 75, 1.75),
+('Queso', 50, 5.00);
 
-INSERT INTO Producto (ID, NombreProducto, Stock, Precio) VALUES
-(1, 'Laptop', 10, 800.00),
-(2, 'Mouse', 50, 20.00),
-(3, 'Teclado', 30, 35.00);
+-- Inserciones para la tabla Empleado
+INSERT INTO Empleado (Nombre, Puesto, Sueldo, Contraseña) VALUES
+('Carlos Sánchez', 'Vendedor', 1500.00, 'pass123'),
+('Laura Martínez', 'Gerente', 2500.00, 'securepass456'),
+('Roberto López', 'Repartidor', 1200.00, 'delivery789');
 
-INSERT INTO Empleado (ID, Nombre, Puesto, Sueldo, Contrasenia)
-VALUES
-(1, 'Juan Pérez', 'Desarrollador', 50000.00, 'contraseña123'),
-(2, 'María López', 'Diseñadora', 45000.00, 'contraseña456'),
-(3, 'Carlos García', 'Gerente', 60000.00, 'contraseña789');
+-- Inserciones para la tabla Asistencia
+INSERT INTO Asistencia (EmpleadoID, Fecha, EstadoDeAsistencia) VALUES
+(1, '2024-10-02', 'Presente'),
+(2, '2024-10-02', 'Presente'),
+(3, '2024-10-02', 'Tarde');
 
-INSERT INTO Asistencia (EstadoDeAsistencia, Fecha, IDEmpleado) VALUES
-('Presente', '2024-10-01', 1),
-('Ausente', '2024-10-01', 2),
-('Presente', '2024-10-01', 3);
-
-INSERT INTO Venta (ID, Cantidad, FechaVenta, FechaEntrega, PrecioTotal, IDCliente, IDEmpleado, IDProducto) VALUES
-(1, 2, '2024-10-05', '2024-10-10', 1600.00, 1, 1, 1),
-(2, 1, '2024-10-06', '2024-10-12', 20.00, 2, 2, 2),
-(3, 3, '2024-10-07', '2024-10-14', 105.00, 3, 3, 3);
+-- Inserciones para la tabla Venta
+INSERT INTO Venta (FechaVenta, EmpleadoID, ClienteID, ProductoID, Cantidad, PrecioTotal, FechaEntrega) VALUES
+('2024-10-02', 1, 1, 1, 5, 12.50, '2024-10-03'),
+('2024-10-02', 2, 2, 2, 3, 5.25, '2024-10-04'),
+('2024-10-02', 1, 3, 3, 2, 10.00, '2024-10-03');
 
 
 DELIMITER //

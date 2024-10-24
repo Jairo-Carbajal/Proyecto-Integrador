@@ -7,7 +7,6 @@ import Historialventas from "./vistas/historialventas";
 import Inventario from "./vistas/inventario";
 /*
 Express, mysql2, cors: npm install express mysql2 cors
-
 React-doom: npm install react-router-dom@6
 */
 function App() {

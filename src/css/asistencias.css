@@ -51,7 +51,6 @@
 }
 
 #fecha {
-  padding: 10px;
   border: 2px solid #3498db;
   border-radius: 5px;
   font-size: 1rem;
@@ -59,10 +58,11 @@
   background-color: #fff;
   transition: all 0.3s ease;
   outline: none;
-  width: 200px;
   margin-top: 1.5rem;
   margin-left: 2rem;
+  padding: 10px;
 }
+
 
 #fecha:hover {
   border-color: #2980b9;

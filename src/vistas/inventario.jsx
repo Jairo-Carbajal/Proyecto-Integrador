@@ -1,59 +1,55 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Navbar from "./navbar";
 import "../css/inventario.css";
 
 function Inventario() {
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {
+    // Obtener los productos desde la API
+    fetch("http://localhost:5000/productos-inventario")
+      .then((response) => response.json())
+      .then((data) => setProductos(data))
+      .catch((error) => console.error("Error al obtener los productos:", error));
+  }, []);
+
   return (
     <>
-      <Navbar></Navbar>
-      <main class="maini">
-        <div class="inventario">
-          <div class="texto3">
-            <h1>INVENTARIO GANDARA</h1>
+      <main className="principal">
+        <Navbar />
+        <section className="maini">
+          <div className="inventario">
+            <div className="texto3">
+              <h1>INVENTARIO GANDARA</h1>
+            </div>
+            <div className="cont3">
+              <table className="tabla-productos">
+                <thead>
+                  <tr>
+                    <th className="columna-producto">Producto</th>
+                    <th className="columna-stock">Stock</th>
+                    <th className="columna-precio">Precio</th>
+                    <th className="columna-comprar"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {productos.map((producto) => (
+                    <tr key={producto.ID}>
+                      <td className="celda-producto">{producto.Nombre}</td>
+                      <td className="celda-stock">{producto.Stock}</td>
+                      <td className="celda-precio">
+                        ${Number(producto.Precio).toFixed(2)}
+                      </td>
+                      <td className="celda-comprar">
+                        <button className="boton-comprar">Comprar</button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
-        <section class="cont3">
-            <table class="tabla-productos">
-              <thead>
-                <tr>
-                  <th class="columna-producto">Producto</th>
-                  <th class="columna-cantidad">Cantidad</th>
-                  <th class="columna-stock">Stock</th>
-                  <th class="columna-precio">Precio</th>
-                  <th class="columna-comprar"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="celda-producto">Leche</td>
-                  <td class="celda-cantidad">38</td>
-                  <td class="celda-stock">200</td>
-                  <td class="celda-precio">1500</td>
-                  <td class="celda-comprar">
-                    <button class="boton-comprar">Comprar</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="celda-producto">Yogurt</td>
-                  <td class="celda-cantidad">15</td>
-                  <td class="celda-stock">333</td>
-                  <td class="celda-precio">1800</td>
-                  <td class="celda-comprar">
-                    <button class="boton-comprar">Comprar</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="celda-producto">Queso</td>
-                  <td class="celda-cantidad">75</td>
-                  <td class="celda-stock">1230</td>
-                  <td class="celda-precio">1000</td>
-                  <td class="celda-comprar">
-                    <button class="boton-comprar">Comprar</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
-        </div>
+        </section>
       </main>
     </>
   );

@@ -1,36 +1,51 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Navbar from "./navbar";
 import "../css/historialventas.css";
 
-
 function Historialventas() {
+  const [ventas, setVentas] = useState([]);
+
+  useEffect(() => {
+    // Obtener las ventas desde la API
+    fetch("http://localhost:5000/ventas-historial")
+      .then((response) => response.json())
+      .then((data) => setVentas(data))
+      .catch((error) => console.error("Error al obtener las ventas:", error));
+  }, []);
+
   return (
     <>
-      <Navbar></Navbar>
-      <main class="mainhv">
-        <section class="cont">
-          <table class="tHV">
-            <thead >
-              <tr class="trhv">
-                <th class="thhv">ID</th>
-                <th class="thhv">Nombre cliente</th>
-                <th class="thhv">Nombre producto</th>
-                <th class="thhv">Cantidad</th>
-                <th class="thhv">Fecha venta</th>
-                <th class="thhv">Fecha entrada</th>
-                <th class="thhv">Precio total</th>
+      <main className="mainhv">
+        <Navbar />
+        <section className="cont">
+          <table className="tHV">
+            <thead>
+              <tr className="trhv">
+                <th className="thhv">ID</th>
+                <th className="thhv">Nombre cliente</th>
+                <th className="thhv">Nombre producto</th>
+                <th className="thhv">Cantidad</th>
+                <th className="thhv">Fecha venta</th>
+                <th className="thhv">Fecha entrega</th>
+                <th className="thhv">Precio total</th>
               </tr>
             </thead>
             <tbody>
-              <tr class="trhv">
-                <td class="tdhv">001</td>
-                <td class="tdhv">Juan Pérez</td>
-                <td class="tdhv">Producto A</td>
-                <td class="tdhv">5</td>
-                <td class="tdhv">12/10/2024</td>
-                <td class="tdhv">14/10/2024</td>
-                <td class="tdhv">$500</td>
-              </tr>
+              {ventas.map((venta) => (
+                <tr key={venta.ID} className="trhv">
+                  <td className="tdhv">{venta.ID}</td>
+                  <td className="tdhv">{venta.NombreCliente}</td>
+                  <td className="tdhv">{venta.NombreProducto}</td>
+                  <td className="tdhv">{venta.Cantidad}</td>
+                  <td className="tdhv">{new Date(venta.FechaVenta).toLocaleDateString()}</td>
+                  <td className="tdhv">
+                    {venta.FechaEntrega ? new Date(venta.FechaEntrega).toLocaleDateString() : "N/A"}
+                  </td>
+                  <td className="tdhv">
+                  ${venta.PrecioTotal ? Number(venta.PrecioTotal).toFixed(2) : "0.00"}
+                </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </section>

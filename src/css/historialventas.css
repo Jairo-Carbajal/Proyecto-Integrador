@@ -5,8 +5,14 @@
 
 .mainhv{
     background: linear-gradient(90deg, #383838, #c9c8c8);
+    height: 100vh;
 }
 
+.cont{
+    display: flex;
+    justify-content: center;
+    margin: 5rem;
+}
 .tHV {
     width: 80%;
     border-collapse: collapse;
@@ -30,3 +36,4 @@
 .trhv:hover {
     background-color: #666; 
 }
+
