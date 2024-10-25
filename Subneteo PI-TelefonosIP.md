@@ -7,7 +7,7 @@
 * **Primera IP**: `195.0.0.1`  
 * **Última IP**: `195.0.0.126`  
 * **Broadcast**: `195.0.0.127`  
-* **Hosts útiles**: `126 - 2 = 124` (Satisface los 85 hosts requeridos)
+* **Hosts útiles**: `128 - 2 = 126` (Satisface los 85 hosts requeridos)
 
 **Subred para 84 hosts**
 
@@ -16,7 +16,7 @@
 * **Primera IP**: `195.0.0.129`  
 * **Última IP**: `195.0.0.254`  
 * **Broadcast**: `195.0.0.255`  
-* **Hosts útiles**: `126 - 2 = 124` (Satisface los 84 hosts requeridos)
+* **Hosts útiles**: `128 - 2 = 126` (Satisface los 84 hosts requeridos)
 
 **Subred para 58 hosts**
 
