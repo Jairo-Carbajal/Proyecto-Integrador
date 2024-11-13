@@ -108,6 +108,16 @@
 
 ---
 
+### **26\. Subred para 53 hosts (requiere 2^6 \= 64 hosts)**
+* **Máscara**: /26  
+* **Red**: 192.168.6.110  
+* **Primera IP**: 192.168.6.111  
+* **Última IP**: 192.168.6.174  
+* **Broadcast**: 192.168.6.175  
+* **Hosts útiles**: 62
+
+---
+
 ### **11\. Subred para 45 hosts (requiere 2^6 \= 64 hosts)**
 
 * **Máscara**: /26  
