@@ -86,6 +86,17 @@
 
 ---
 
+### **10\. Subred para 55 hosts (requiere 2^6 \= 64 hosts)**
+
+* **Máscara**: /26  
+* **Red**: 192.168.3.192  
+* **Primera IP**: 192.168.3.193  
+* **Última IP**: 192.168.3.254  
+* **Broadcast**: 192.168.3.255  
+* **Hosts útiles**: 62
+
+---
+
 ### **9\. Subred para 54 hosts (requiere 2^6 \= 64 hosts)**
 
 * **Máscara**: /26  
@@ -93,17 +104,6 @@
 * **Primera IP**: 192.168.3.129  
 * **Última IP**: 192.168.3.190  
 * **Broadcast**: 192.168.3.191  
-* **Hosts útiles**: 62
-
----
-
-### **10\. Subred para 46 hosts (requiere 2^6 \= 64 hosts)**
-
-* **Máscara**: /26  
-* **Red**: 192.168.3.192  
-* **Primera IP**: 192.168.3.193  
-* **Última IP**: 192.168.3.254  
-* **Broadcast**: 192.168.3.255  
 * **Hosts útiles**: 62
 
 ---
@@ -200,16 +200,6 @@
 
 ---
 
-### **19\. Subred para 30 hosts (requiere 2^5 \= 32 hosts)**
-
-* **Máscara**: /27  
-* **Red**: 192.168.5.192  
-* **Primera IP**: 192.168.5.193  
-* **Última IP**: 192.168.5.222  
-* **Broadcast**: 192.168.5.223  
-* **Hosts útiles**: 30
-
----
 
 ### **20\. Subred para 29 hosts (requiere 2^5 \= 32 hosts)**
 
@@ -244,16 +234,6 @@
 
 ---
 
-### **23\. Subred para 26 hosts (requiere 2^5 \= 32 hosts)**
-
-* **Máscara**: /27  
-* **Red**: 192.168.6.64  
-* **Primera IP**: 192.168.6.65  
-* **Última IP**: 192.168.6.94  
-* **Broadcast**: 192.168.6.95  
-* **Hosts útiles**: 30
-
----
 
 ### **24\. Subred para 21 hosts (requiere 2^5 \= 32 hosts)**
 
@@ -277,36 +257,4 @@
 
 ---
 
-### **26\. Subred para 13 hosts (requiere 2^4 \= 16 hosts)**
-
-* **Máscara**: /28  
-* **Red**: 192.168.6.160  
-* **Primera IP**: 192.168.6.161  
-* **Última IP**: 192.168.6.174  
-* **Broadcast**: 192.168.6.175  
-* **Hosts útiles**: 14
-
----
-
-### 
-
-### **27\. Subred para 9 hosts (requiere 2^4 \= 16 hosts)**
-
-* **Máscara**: /28  
-* **Red**: 192.168.6.176  
-* **Primera IP**: 192.168.6.177  
-* **Última IP**: 192.168.6.190  
-* **Broadcast**: 192.168.6.191  
-* **Hosts útiles**: 14
-
----
-
-### **28\. Subred para 7 hosts (requiere 2^4 \= 16 hosts)**
-
-* **Máscara**: /28  
-* **Red**: 192.168.6.192  
-* **Primera IP**: 192.168.6.193  
-* **Última IP**: 192.168.6.206  
-* **Broadcast**: 192.168.6.207  
-* **Hosts útiles**: 14
 
